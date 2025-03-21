@@ -8,7 +8,7 @@ def sign_doc(binary_data):
         raise KeyError("Не выбран сертификат")
 
     store = win32com.client.Dispatch("CAdESCOM.Store")
-    store.Open(2, "My", 0)
+    store.Open(2, "CA", 0)
     cert = store.Certificates.Item(GLOBAL_STATE['cert_number'])
 
     signedData = win32com.client.Dispatch("CAdESCOM.CadesSignedData")
