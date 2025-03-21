@@ -1,3 +1,5 @@
 .env
 *.xml
 *.json
+__pycache__
+venv

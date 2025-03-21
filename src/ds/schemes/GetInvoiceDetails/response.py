@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Union
 from pydantic import BaseModel
 
 
@@ -82,11 +82,11 @@ class InvoiceDetailsResponse(BaseModel):
     invDateExpire: Optional[str] = None
     invNumber: Optional[str] = None
     invSignRouteNumCirc: Optional[str] = None
-    invFreight: Freight | None = None
+    invFreight: Union[Freight, None] = None
     invFormPPSign: Optional[str] = None
     invTranspPurposeID: Optional[str] = None
-    freightGTDNumber: str | None = None
-    invToPortName: str | None = None
+    freightGTDNumber: Union[str, None] = None
+    invToPortName: Union[str, None] = None
 
     @property
     def invNeedForECP_display(self) -> str:

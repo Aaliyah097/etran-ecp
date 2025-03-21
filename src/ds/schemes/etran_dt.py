@@ -7,7 +7,7 @@ class etrandatetime(datetime):
         yield cls.validate
 
     @classmethod
-    def validate(cls, value, *args, **kwargs):
+    def validate(cls, value, values, config, field):
         if isinstance(value, datetime):
             return value
         try:

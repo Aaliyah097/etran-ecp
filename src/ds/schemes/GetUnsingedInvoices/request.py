@@ -1,8 +1,9 @@
 import pytz
+from typing import Tuple
 from datetime import date, datetime, time
 
 
-def UnsignedInvoicesRequest(date_begin: date, date_end: date) -> tuple[str, str]:
+def UnsignedInvoicesRequest(date_begin: date, date_end: date) -> Tuple[str, str]:
     timezone = pytz.timezone('Europe/Moscow')
     date_begin = datetime.combine(date_begin, time.min, timezone)
     date_end = datetime.combine(date_end, time.max, timezone)

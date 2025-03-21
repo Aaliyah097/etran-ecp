@@ -1,7 +1,8 @@
+from typing import Dict
 import win32com.client
 
 
-def list_certificates() -> dict[int, str]:
+def list_certificates() -> Dict[int, str]:
     store = win32com.client.Dispatch("CAdESCOM.Store")
     store.Open(2, "My", 0)
     return {

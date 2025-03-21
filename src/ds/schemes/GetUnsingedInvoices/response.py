@@ -1,4 +1,4 @@
-from datetime import datetime
+from typing import Union, List
 from pydantic import BaseModel
 from ds.schemes.etran_dt import etrandatetime
 
@@ -23,7 +23,7 @@ class Document(BaseModel):
 
 class ECPDocType(BaseModel):
     ECPDocTypeID: int
-    ECPDocTypeName: str | None = None
+    ECPDocTypeName: Union[str, None] = None
 
 
 class ECPWaitDocument(BaseModel):
@@ -35,4 +35,4 @@ class ECPWaitDocument(BaseModel):
 class UnsignedInvoicesResponse(BaseModel):
     OperId: int
     OperDate: etrandatetime
-    ECPWaitDocument: list[ECPWaitDocument]
+    ECPWaitDocument: List[ECPWaitDocument]

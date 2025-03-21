@@ -1,4 +1,7 @@
-def SetECPRequest(invoice_id: int, data: str, sign: str) -> tuple[str, str]:
+from typing import Tuple
+
+
+def SetECPRequest(invoice_id: int, data: str, sign: str) -> Tuple[str, str]:
     return (
         """<setECP>
             <docID value="%s"/>

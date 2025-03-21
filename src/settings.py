@@ -1,18 +1,14 @@
 import os
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from dotenv import load_dotenv
 
 
-class AppConfig(BaseSettings):
-    ETRAN_USERNAME: str
-    ETRAN_PASSWORD: str
-    ETRAN_URL: str
+load_dotenv('.env')
 
-    model_config = SettingsConfigDict(
-        env_file=os.getenv("ENV_FILE", ".env"),
-        env_file_encoding="utf-8",
-        extra="allow",
-    )
+
+class AppConfig:
+    ETRAN_USERNAME: str = os.environ.get('ETRAN_USERNAME')
+    ETRAN_PASSWORD: str = os.environ.get('ETRAN_PASSWORD')
+    ETRAN_URL: str = os.environ.get('ETRAN_URL')
 
 
 settings = AppConfig()
-print(settings.dict())

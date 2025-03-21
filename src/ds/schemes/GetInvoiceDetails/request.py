@@ -1,7 +1,10 @@
+from typing import Union, Tuple
+
+
 def InvoiceDetailsRequest(
-    invoice_id: str | None,
-    invoice_number: str | None
-) -> tuple[str, str]:
+    invoice_id: Union[str, None],
+    invoice_number: Union[str, None]
+) -> Tuple[str, str]:
     if not invoice_id and not invoice_number:
         raise ValueError("Ожидлся ИД или номер накладной")
 
